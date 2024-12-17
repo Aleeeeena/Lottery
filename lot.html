@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+     <div style="text-align: center;  width: 100%; height:700px; background-color: black;">
+       <h1 style="color: white; margin-top: 300px;">LUCKY CONTEST</h1>
+        <button onclick="check()" style="background-color: rgb(83, 83, 251); border-radius: 25px; width: 100px; height: 50px;">check</button>
+       <div id="output" style="color: orange; margin-top: 20px;" ></div>
+     </div>
+</body>
+
+
+
+<script>
+ const check=()=>{
+ const luk=new Promise((resolve,reject)=>{
+
+const mynum = 3
+const guessnum =Math.ceil(Math.random()*5)
+if (mynum==guessnum) {
+ resolve("YAAY YOU WON")
+}
+else{
+ reject("BETTER LUCK NEXT TIME")
+}
+})
+luk.then(value=>{
+ output.innerHTML=value
+}).catch(reason=>{
+ output.innerHTML=reason
+})
+ }
+
+
+</script>
+</html>
